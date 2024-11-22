@@ -22,7 +22,7 @@ def HoughDetect_May_13(img,x,P,resolution = 1):
     i_w = int(img.shape[1] * resolution) # image width 
     img = imutils.resize(img, width = i_w) # resizing image for desired resolution
     i_h = int(img.shape[0]) # image height
-    print "Image Width = {0}, Image Height  = {0}".format(i_w,i_h) # Comment if running on a video file
+    print("Image Width = {0}, Image Height  = {0}".format(i_w,i_h)) # Comment if running on a video file
 
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # BGR TO GRAYSCALE
     img_gray = cv2.medianBlur(img_gray,3) # Removes salt and pepper noise by convolving the image with a (3,3) square kernel
