@@ -1,3 +1,11 @@
+# 일부 버전 맞지 않는 부분 수정
+-  pip install imutils
+-  time.clock() 더 이상 지원 안함 -> time.perf_counter() 로 수정
+-  print() 괄호 추가
+-  raise 파트 수정
+-  zip에러 수정, zip 이후 인덱싱 불가하기 때문에 zip 자체를 list로 묶음
+
+
 # Vanishing_point
 Detects vanishing points in an image
 
