@@ -11,8 +11,8 @@ cv2.namedWindow('Window', cv2.WND_PROP_FULLSCREEN)
 cv2.setWindowProperty('Window', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
 # Read from Image
-img = cv2.imread('Corridor.jpg')
-
+# img = cv2.imread('Corridor.jpg')
+img = cv2.imread('140.png')
 
 
 # Image Resolution 
@@ -25,13 +25,13 @@ P = matrix([[10000., 0.], [0., 10000.]])
 count_hough = 0
 t1 = []
 while count_hough < 1:
-	t0 = time.clock()
+	t0 = time.perf_counter()
 	img_result,x,P,measurement= HoughDetect_May_13(img,x,P,resolution = res)
-	t1.append(time.clock() - t0)
+	t1.append(time.perf_counter() - t0)
 	count_hough += 1
 
-print 'Vanishing Point coordinates = {0}'.format(x)
-print 'Img process time = {0} ms'.format(np.mean(t1) * 1000)
+print( 'Vanishing Point coordinates = {0}'.format(x))
+print( 'Img process time = {0} ms'.format(np.mean(t1) * 1000))
 
 
 cv2.imshow('Window',img_result)
