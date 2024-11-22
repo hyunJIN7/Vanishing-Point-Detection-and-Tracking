@@ -6,6 +6,13 @@
 -  zip에러 수정, zip 이후 인덱싱 불가하기 때문에 zip 자체를 list로 묶음
 
 
+
+140.png 결과
+- 소실점 제대로 못찾음
+![스크린샷(1)](https://github.com/user-attachments/assets/e95ce721-3e13-4bd7-a883-bf0080a320e3)
+
+
+
 # Vanishing_point
 Detects vanishing points in an image
 
