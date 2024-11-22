@@ -47,7 +47,7 @@ P = matrix([[10000., 0.], [0., 10000.]])
 
 
 
-print 'Number of frames = {0} '.format(cap.get(7))
+print ('Number of frames = {0} '.format(cap.get(7)))
 
 while(cap.isOpened()):
 
@@ -60,7 +60,7 @@ while(cap.isOpened()):
     out.write(img_result)
 
     
-    print 'Vanishing Point coordinates = {0}'.format(x)
+    print ('Vanishing Point coordinates = {0}'.format(x))
     cv2.imshow('Window',img_result)
     k = cv2.waitKey(1) & 0xFF
 
@@ -73,7 +73,7 @@ while(cap.isOpened()):
 
 
 cv2.destroyAllWindows()
-print ctime
+print (ctime)
 
         
             
