@@ -8,17 +8,24 @@ def cross_product(x,y):
 	return np.array(res)
 
 def lines_from_points(points):
-	lines = []
-	left_limit = min(min(zip(*points)[0]), min(zip(*points)[2]))
-	right_limit = max(max(zip(*points)[0]), max(zip(*points)[2]))
-	print 'Left limit = {0}\nRight Limit = {1}'.format(left_limit,right_limit)
-	for x1,y1,x2,y2 in points:
-		point_1 = np.array([x1,y1,1])
-		point_2 = np.array([x2,y2,1])
-		line = cross_product(point_1, point_2)
-		lines.append(line)
+    lines = []
+    # zip 결과를 리스트로 변환
+    transposed_points = list(zip(*points))
+    
+    # 각 x 좌표와 관련된 최소 및 최대값 찾기
+    left_limit = min(min(transposed_points[0]), min(transposed_points[2]))
+    right_limit = max(max(transposed_points[0]), max(transposed_points[2]))
+    
+    print('Left limit = {0}\nRight Limit = {1}'.format(left_limit, right_limit))
+    
+    for x1, y1, x2, y2 in points:
+        point_1 = np.array([x1, y1, 1])
+        point_2 = np.array([x2, y2, 1])
+        line = cross_product(point_1, point_2)
+        lines.append(line)
+    
+    return lines
 
-	return lines
 
 def points_from_lines(lines, state):
 	intersections = []
@@ -37,8 +44,8 @@ def points_from_lines(lines, state):
 
 	#np.save('intersection_may_16.npy', intersections)
 	if len(intersections) != 0:
-		x_cordinates = zip(*intersections)[0]
-		y_coordinates = zip(*intersections)[1]
+		x_cordinates =  list(zip(*intersections))[0]
+		y_coordinates =  list(zip(*intersections))[1]
 
 
 		v_x = int(np.median(x_cordinates))
